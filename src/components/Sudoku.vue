@@ -4,19 +4,20 @@
       <b-card>
         <table>
           <tr v-for="(row, rowIdx) in items" :key="`row-${rowIdx}`">
-            <td v-for="(col, colIdx) in row" :key="`col-${colIdx}`">
-              <input :id="rowIdx.toString() + '-' + colIdx.toString()" :class="`row-${rowIdx}`" style="width:15%" type="text" v-model="items[rowIdx][colIdx]" v-on:input="refreshNum()">
+            <td v-for="(col, colIdx) in row" :key="`col-${colIdx}`" style="width:25px">
+              <input :id="rowIdx.toString() + '-' + colIdx.toString()" :class="`row-${rowIdx}`" style="width: 25px" type="text" v-model="items[rowIdx][colIdx]" v-on:input="refreshNum()">
             </td>
           </tr>
         </table>
       </b-card>
-      <b-card>
+      <b-card class="mt-1">
           Enter size: <input type="number" style="width:15%" v-model.number="size" v-on:input="generateItemArray()">
       </b-card>
-      <b-card>
+      <b-card class="mt-1">
         <b-button variant="success" v-on:click="result = calculate()">Calculate</b-button>
-      </b-card>
-      <b-card>
+        <span class="ml-5"><b>Usage: Enter different integers to represent each of the patterns/pieces, enter letter "x" to define the cell to solve.</b></span>
+      </b-card >
+      <b-card class="mt-1">
           Result: x={{result}}
       </b-card>
     </b-container>
