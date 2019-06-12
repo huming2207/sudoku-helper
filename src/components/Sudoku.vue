@@ -15,10 +15,13 @@
       </b-card>
       <b-card class="mt-1">
         <b-button variant="success" v-on:click="result = calculate()">Calculate</b-button>
-        <span class="ml-5"><b>Usage: Enter different integers to represent each of the patterns/pieces, enter letter "x" to define the cell to solve.</b></span>
+        <b-button class="ml-2" variant="success" v-on:click="generateItemArray(); refreshNum();">Clear</b-button>
       </b-card >
       <b-card class="mt-1">
           Result: x={{result}}
+      </b-card>
+      <b-card class="mt-1">
+        <b>Usage: Enter different integers to represent each of the patterns/pieces, enter letter "x" to define the cell to solve.</b>
       </b-card>
     </b-container>
   </div>
